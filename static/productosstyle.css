@@ -1,0 +1,92 @@
+body{
+    background-color: #ffffffea;
+  }
+  header, .alert{
+    z-index: 100;
+  }
+  .description{
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+  }
+  .description:hover{
+    height: 80px;
+  }
+  .carrito{
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .table__productos{
+    display: flex;
+  }
+  .table__productos > img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+  }
+  .table__cantidad > input{
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .hide, .remove{
+    display: none;
+  }
+
+  #Encabezado {
+    background-color: rgb(92, 179, 86);
+    padding: 10px;
+}
+
+#Encabezado h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+#Encabezado .text-dark {
+    color: white !important;
+}
+
+
+.navbar-light.bg-light {
+  background-color: #a7d8a7 !important; 
+}
+
+.navbar-brand img {
+  height: 4em; 
+  width: auto;
+}
+
+.btn-custom {
+  background-color: #28a745; 
+  color: white; 
+  border: none; 
+}
+
+.btn-custom:hover {
+  background-color: #218838; 
+  color: white; 
+}
+
+.text-green {
+  color: #28a745; 
+}
+
+.nav-link-custom {
+  background-color: #28a745 !important; 
+  color: white !important; 
+  border: none !important; 
+  margin-right: 10px;
+}
+
+.nav-link-custom:hover {
+  background-color: #218838 !important; 
+  color: white !important; 
+}

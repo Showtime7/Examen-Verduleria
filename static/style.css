@@ -1,0 +1,111 @@
+#Encabezado {
+    background-color: rgb(92, 179, 86);
+    padding: 10px;
+}
+
+#Encabezado h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+#Encabezado .text-dark {
+    color: white !important;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+#menu a{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+#menu button{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    min-height: 400px; 
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%; 
+    height: auto; 
+    object-fit: scale-down; 
+}
+
+@media(max-width: 768px){ 
+    #intro{
+        width:90% !important;
+    }
+}
+
+#pag-producto {
+    background-image: url('https://blog.aepla.es/wp-content/uploads/2023/01/beneficios-saludables-frutas-verduras.jpeg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+    background-color: rgba(248, 249, 250, 0.8); 
+    border: 2px solid black !important; 
+    border-radius: 20px !important; 
+}
+
+#pie-pag {
+    background-color: black;
+    padding: 10px;
+}
+
+.radio-container {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.from-check {
+    margin-right: 5px; 
+}
+
+.navbar-light.bg-light {
+    background-color: #a7d8a7 !important; 
+}
+
+.navbar-brand img {
+    height: 4em; 
+    width: auto;
+}
+
+.btn-custom {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-custom:hover {
+    background-color: #218838; 
+    color: white; 
+}

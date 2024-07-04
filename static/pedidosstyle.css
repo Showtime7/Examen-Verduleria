@@ -1,0 +1,115 @@
+body {
+    background-color: #ffffffea;
+}
+
+header, .alert {
+    z-index: 100;
+}
+
+#Encabezado {
+    background-color: rgb(92, 179, 86);
+    padding: 10px;
+}
+
+#Encabezado h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+#Encabezado .text-dark {
+    color: white !important;
+}
+
+.navbar-light.bg-light {
+    background-color: #a7d8a7 !important; 
+}
+
+.navbar-brand img {
+    height: 4em; 
+    width: auto;
+}
+
+.btn-custom {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+}
+
+.btn-custom:hover {
+    background-color: #218838; 
+    color: white; 
+}
+
+.text-green {
+    color: #28a745; 
+}
+
+.nav-link-custom {
+    background-color: #28a745 !important; 
+    color: white !important; 
+    border: none !important; 
+    margin-right: 10px;
+}
+
+.nav-link-custom:hover {
+    background-color: #218838 !important; 
+    color: white !important; 
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.d-none {
+    display: none;
+}
+
+.form-check {
+    margin-bottom: 15px;
+}
+
+.cantidad-producto {
+    width: 100px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form-container {
+    background: rgba(248, 249, 250, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn-custom-green {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-custom-green:hover {
+    background-color: #218838;
+}
+
+.text-danger {
+    font-size: 0.9em;
+}

@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5n2kfra8p0QmNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'pedidosstyle.css' %}">
+</head>
+<body>
+    <header class="text-center mt-1" id="Encabezado">
+        <h1 class="text-dark">
+          SÍGUENOS EN NUESTRAS RR.SS
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-tiktok"></i>
+        </h1>
+    </header>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="menu">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'Assets/Iconos/logo.png' %}" alt="Verduleria La Del Barrio">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'producto' %}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nosotros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'conocenos' %}">Conocenos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'zonadespacho' %}">Zonas de despacho</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pedidos' %}">Pedidos</a>
+                      </li>
+                </ul>
+                
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="buscar producto" aria-label="buscar">
+                    <button class="btn btn-custom" type="button">Buscar</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-custom mx-2" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link btn text-white btn-custom mx-2" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn text-white btn-custom mx-2" href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="form-container">
+            <h2 class="text-center">Realizar Pedido</h2>
+            <form id="pedidoForm">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="correo" required>
+                    <div id="emailError" class="text-danger d-none">Por favor, ingrese un correo válido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección de Despacho:</label>
+                    <input type="text" class="form-control" id="direccion" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Productos:</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto1" value="Zanahoria" data-precio="1190">
+                            <label class="form-check-label" for="producto1">
+                                Zanahoria - $1190
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad1" min="1" value="1" data-precio="1190">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto2" value="Tomate Limache" data-precio="990">
+                            <label class="form-check-label" for="producto2">
+                                Tomate Limache - $990
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad2" min="1" value="1" data-precio="990">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto3" value="Malla de Papas" data-precio="3000">
+                            <label class="form-check-label" for="producto3">
+                                Malla de Papas - $3000
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad3" min="1" value="1" data-precio="3000">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto4" value="Naranjas" data-precio="1500">
+                            <label class="form-check-label" for="producto4">
+                                Naranjas - $1500
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad4" min="1" value="1" data-precio="1500">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto5" value="Lechuga Costina" data-precio="1100">
+                            <label class="form-check-label" for="producto5">
+                                Lechuga Costina - $1100
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad5" min="1" value="1" data-precio="1100">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="producto" id="producto6" value="Cebolla" data-precio="1600">
+                            <label class="form-check-label" for="producto6">
+                                Cebolla - $1600
+                            </label>
+                            <input type="number" class="form-control mt-1 cantidad-producto" id="cantidad6" min="1" value="1" data-precio="1600">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="total" class="form-label">Costo Total:</label>
+                    <input type="text" class="form-control" id="total" readonly>
+                </div>
+                <button type="submit" class="btn btn-custom-green w-100">Realizar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'Assets/scriptsJava/pedidos.js' %}"></script>
+</body>
+</html>
