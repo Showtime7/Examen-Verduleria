@@ -40,7 +40,7 @@ ROOT_URLCONF = 'verduleriaalpha.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],  # Asegúrate de que esta ruta sea correcta
+        'DIRS': [BASE_DIR / "templates"],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
