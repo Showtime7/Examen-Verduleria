@@ -10,8 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
@@ -92,13 +91,17 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <img src="{% static 'Assets/mapas/comunassantiago.jpeg' %}" class="img-fluid" alt="Mapa Comunas Santiago">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
                 </div>
                 <div class="col-md-6">
                     <img src="{% static 'Assets/mapas/starkenchile.jpg' %}" class="img-fluid" alt="Mapa Starken Chile">
                 </div>
             </div>
         </section>
-       
+
+        <!-- Incluye el archivo JavaScript que contiene la función initMap -->
+        <script src="{% static 'Assets/scriptsJava/soyelmapa.js' %}" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64Ife3269wFxFqctTOzFRbKm6vELNizQ&callback=initMap" defer></script>
+
 </body>
 </html>
